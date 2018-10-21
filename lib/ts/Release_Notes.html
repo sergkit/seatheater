@@ -1,0 +1,440 @@
+<html>
+<head>
+<style>
+<!--
+/* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+{margin-top:0cm;margin-right:0cm;margin-bottom:8pt;margin-left:0cm;line-height:normal;font-size:10.0pt;font-family:Verdana,sans-serif;}
+p.MsoListParagraph, li.MsoListParagraph, div.MsoListParagraph
+{margin-top:0cm;margin-right:0cm;margin-bottom:2pt;margin-left:0cm;line-height:normal;font-size:10.0pt;font-family:Verdana,sans-serif;}
+-->
+</style>
+<title>
+STM8S TouchSensing Driver Release Notes
+</title>
+</head>
+<body lang=EN-US>
+<p class=MsoNormal align=center style='text-align:center;line-height:normal'><b><span style='font-size:18.0pt;color: rgb(51, 102, 255)'>
+Release Notes for
+</span></b></p>
+<p class=MsoNormal align=center style='text-align:center;line-height:normal'><b><span style='font-size:18.0pt;color: rgb(51, 102, 255)'>
+STM8S TouchSensing Driver
+</span></b></p>
+<p class=MsoNormal style='line-height:normal'><span style='font-size:10.0pt'>&nbsp;</span></p>
+<p class=MsoNormal align=center style='line-height:center;line-height:normal'><span style='font-size:10.0pt'>
+Copyright © 2013 STMicroelectronics
+</span></p>
+<p class=MsoNormal align=center style='line-height:center;line-height:normal'><span style='font-size:10.0pt'>
+Microcontrollers Division - Application Team
+</span></p>
+<p class=MsoNormal align=center> <img id=_rnc_img0 src=../../_htmresc/st_logo.png border=0> </span></p>
+<p class=MsoNormal style='line-height:normal'><span style='font-size:10.0pt'>&nbsp;</span></p>
+<table class=MsoNormal border=0 cellspacing=0 cellpadding=0 width=100%
+style='margin-left:4cm;margin-right:4cm;width:80%;background:rgb(51, 102, 255)'>
+<td style='padding:0cm 5.4pt 0cm 5.4pt'>
+<p class=MsoNormal style='margin-left:0cm;margin-bottom:0cm;line-height:normal'><b><span style='font-size:12.0pt;color:white'>
+Update History</span></b></p></td></tr></table>
+<p class=MsoNormal style='line-height:normal'><span style='font-size:10.0pt'>&nbsp;&nbsp;</span></p>
+<table class=MsoNormal border=0 cellspacing=0 cellpadding=0 width=100%
+style='margin-left:4cm;width:23%;background:rgb(51, 102, 255)'>
+<td align=left style='padding:0cm 5.4pt 0cm 5.4pt'>
+<p class=MsoNormal style='margin-bottom:0cm;line-height:normal'><b><span style='font-size:10.0pt;color:white'>
+V2.5.0  /  14-October-2013</span></b></p></td></tr></table>
+<p class=MsoNormal style='line-height:normal'><span style='font-size:10.0pt'>&nbsp;</span></p>
+<p class=MsoNormal style='margin-left:4cm;line-height:normal'><b><u><span style='font-size:10.0pt'>
+Main Changes
+</span></u></b></p>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:10.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#8226;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+Suppression of STM8L devices with charge-transfer (CT) acquisition. 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:12.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&nbsp;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ Note: These devices and the CT acquisition are now supported in the new <b>STMTouch driver</b>. 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:10.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#8226;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+Only <b>STM8S/A devices</b> with <b>RC acquisition</b> are now supported in this driver. 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:10.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#8226;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+Driver name changed from "STM8 TouchSensing Driver" to "STM8S TouchSensing Driver". 
+</span></p>
+<p class=MsoNormal style='line-height:normal'><span style='font-size:10.0pt'>&nbsp;</span></p>
+<p class=MsoNormal style='margin-left:4cm;line-height:normal'><b><u><span style='font-size:10.0pt'>
+Development Toolchains and Compilers
+</span></u></b></p>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:10.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#8226;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ST Visual Develop (STVD) v4.3.4. 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:10.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#8226;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+Cosmic STM8 C Compiler v4.3.9. 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:10.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#8226;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+Raisonance Ride7/RKit-STM8 v2.51.13. 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:10.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#8226;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+IAR Embedded Workbench for STM8 v1.41. 
+</span></p>
+<p class=MsoNormal style='line-height:normal'><span style='font-size:10.0pt'>&nbsp;</span></p>
+<p class=MsoNormal style='margin-left:4cm;line-height:normal'><b><u><span style='font-size:10.0pt'>
+Known Limitations
+</span></u></b></p>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:10.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#8226;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+See the stm8_ts_driver_um.chm file. 
+</span></p>
+<p class=MsoNormal style='line-height:normal'><span style='font-size:10.0pt'>&nbsp;&nbsp;</span></p>
+<table class=MsoNormal border=0 cellspacing=0 cellpadding=0 width=100%
+style='margin-left:4cm;width:23%;background:rgb(51, 102, 255)'>
+<td align=left style='padding:0cm 5.4pt 0cm 5.4pt'>
+<p class=MsoNormal style='margin-bottom:0cm;line-height:normal'><b><span style='font-size:10.0pt;color:white'>
+V2.4.0  /  01-July-2011</span></b></p></td></tr></table>
+<p class=MsoNormal style='line-height:normal'><span style='font-size:10.0pt'>&nbsp;</span></p>
+<p class=MsoNormal style='margin-left:4cm;line-height:normal'><b><u><span style='font-size:10.0pt'>
+Main Changes
+</span></u></b></p>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:10.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#8226;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+Add support of STM8L15X Low Density devices with software and hardware acquisition modes. 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:10.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#8226;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+Bug correction in the ECS processing routine. 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:10.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#8226;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+Validated on new IAR toolchain version. 
+</span></p>
+<p class=MsoNormal style='line-height:normal'><span style='font-size:10.0pt'>&nbsp;</span></p>
+<p class=MsoNormal style='margin-left:4cm;line-height:normal'><b><u><span style='font-size:10.0pt'>
+Development Toolchains and Compilers
+</span></u></b></p>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:10.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#8226;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ST Visual Debug (STVD) toolchain v4.2.0. 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:10.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#8226;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+Cosmic compiler v4.3.4. 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:10.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#8226;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+Raisonance compiler v2.32.10.0307. 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:10.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#8226;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+EWARM-STM8 (IAR) v1.30.1. 
+</span></p>
+<p class=MsoNormal style='line-height:normal'><span style='font-size:10.0pt'>&nbsp;</span></p>
+<p class=MsoNormal style='margin-left:4cm;line-height:normal'><b><u><span style='font-size:10.0pt'>
+Known Limitations
+</span></u></b></p>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:10.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#8226;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+See the stm8_ts_driver_um.chm file. 
+</span></p>
+<p class=MsoNormal style='line-height:normal'><span style='font-size:10.0pt'>&nbsp;&nbsp;</span></p>
+<table class=MsoNormal border=0 cellspacing=0 cellpadding=0 width=100%
+style='margin-left:4cm;width:23%;background:rgb(51, 102, 255)'>
+<td align=left style='padding:0cm 5.4pt 0cm 5.4pt'>
+<p class=MsoNormal style='margin-bottom:0cm;line-height:normal'><b><span style='font-size:10.0pt;color:white'>
+V2.3.1  /  14-February-2011</span></b></p></td></tr></table>
+<p class=MsoNormal style='line-height:normal'><span style='font-size:10.0pt'>&nbsp;</span></p>
+<p class=MsoNormal style='margin-left:4cm;line-height:normal'><b><u><span style='font-size:10.0pt'>
+Main Changes
+</span></u></b></p>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:10.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#8226;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+Bugs correction and improvement of the stm8_tsl_checkconfig.h file. 
+</span></p>
+<p class=MsoNormal style='line-height:normal'><span style='font-size:10.0pt'>&nbsp;</span></p>
+<p class=MsoNormal style='margin-left:4cm;line-height:normal'><b><u><span style='font-size:10.0pt'>
+Development Toolchains and Compilers
+</span></u></b></p>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:10.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#8226;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ST Visual Debug (STVD) toolchain v4.2.0. 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:10.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#8226;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+Cosmic compiler v4.3.4. 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:10.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#8226;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+Raisonance compiler v2.32.10.0307. 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:10.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#8226;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+EWARM-STM8 (IAR) v1.10.0. 
+</span></p>
+<p class=MsoNormal style='line-height:normal'><span style='font-size:10.0pt'>&nbsp;&nbsp;</span></p>
+<table class=MsoNormal border=0 cellspacing=0 cellpadding=0 width=100%
+style='margin-left:4cm;width:23%;background:rgb(51, 102, 255)'>
+<td align=left style='padding:0cm 5.4pt 0cm 5.4pt'>
+<p class=MsoNormal style='margin-bottom:0cm;line-height:normal'><b><span style='font-size:10.0pt;color:white'>
+V2.3.0  /  15-September-2010</span></b></p></td></tr></table>
+<p class=MsoNormal style='line-height:normal'><span style='font-size:10.0pt'>&nbsp;</span></p>
+<p class=MsoNormal style='margin-left:4cm;line-height:normal'><b><u><span style='font-size:10.0pt'>
+Main Changes
+</span></u></b></p>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:10.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#8226;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+To port an application from STM8 Touch Sensing Library V2.2.0 to V2.3.0, the user must create again his tsl_conf.h file from a tsl_conf_RC_TOADAPT.h or tsl_conf_CT_TOADAPT.h V2.3.0 file with its own parameters : 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:20.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#186;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ PORT MASK definition for multi-channel keys section has been removed (the preprocessor variable definitions are automatically created in stm8_tsl_check_config.h). 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:20.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#186;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ Preprocessor variables : 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:30.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#8211;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ PROTECT_IO_ACCESS: allows to protect the IO register modifications by interruption subroutines during accesses from Touch Sensing acquisition functions, (to be kept at 1 to keep same behaviour as V2.2.0). 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:30.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#8211;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ SW_SPREAD_SPECTRUM : for STM8L15x only, allows to use the same Spread Spectrum mechanism as implemented for the STM8L10x in order to keep a constant internal osillator frequency for USART communication for example, (0 to disable the feature). 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:30.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#8211;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ SPREAD_COUNTER_MAX is now used for STM8L15x hardware spread spectrum excursion (if SPREAD_SPECTRUM set to 1), 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:30.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#8211;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ ACTIVE_SHIELD_GROUP : defines the switch group dedicated to the active shield feature (0 to disable the feature). 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:30.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#8211;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ RTOS_MANAGEMENT : allows to call the timebase routine from the RTOS instead of using a timer interrupt every 500µs, 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:30.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#8211;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ TIMER_CALLBACK : allows to call a function from the timer interrupt used as 500µs timebase, 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:30.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#8211;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ USE_INLINED_FUNCTIONS : forces inlining of the SW spread spectrum function only (more function may be inlined in the future). No effect with IAR. 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:20.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#186;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ All the preprocessor variables must be defined but set to 0 to disable the associated feature. 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:20.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#186;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ Support of IAR C compiler: Tested with v1.10.0. 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:20.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#186;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ Add active shield feature for charge-transfer acquisition principle. 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:20.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#186;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ Add callback capability for time-base interrupt sub-routine. 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:20.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#186;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ Add RTOS management capability of the time-base function. 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:20.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#186;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ Add forced inlining option for the software spread spectrum function. 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:20.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#186;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ Add software spread spectrum for STM8L15x. 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:20.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#186;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ Add amplitude management of the hardware spread spectrum for STM8L15x. 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:20.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#186;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ Add the ability to define an application with multi-channel keys but without single channel key. 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:30.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#8211;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ Add a new compilation variable automatically generated : NUMBER_OF_ACQUISITION_PORTS. 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:20.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#186;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ Add the ability to skip the port acquisition when all its channels are disabled. 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:20.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#186;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ Improve acquisition speed for charge transfer acquisition for both STM8L10x and STM8L15x. 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:20.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#186;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ Improve the management of the disabled channels during acquisition. 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:20.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#186;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ Add the management of the interrupt masking defined by a compilation variable. 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:20.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#186;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ Remove calibration related functions from the API. 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:20.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#186;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ Remove alignment mechanism for assembly functions of RC acquisition principle file. 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:20.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#186;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ Cleaning RC acquisition principle related code in charge transfer acquisition principle dedicated files. 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:20.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#186;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ Improve checking performed in the stm8_tsl_check_config.h file. 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:20.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#186;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ Simplify the multi-channel key definitions by automatically defining the MKEY_CHi_MASK compilation variable from stm8_tsl_check_config.h file. 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:20.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#186;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ CLWHTA and CLWLTA are now also used by STM8L10x related functions for charge-transfer acquisition principle. 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:20.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#186;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ Fix the adjustment of the low state pulse for STM8L10x charge-transfer acquisition. 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:20.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#186;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ Rename “Detection exclusion system” acronym from DES to DxS. 
+</span></p>
+<p class=MsoNormal style='line-height:normal'><span style='font-size:10.0pt'>&nbsp;&nbsp;</span></p>
+<table class=MsoNormal border=0 cellspacing=0 cellpadding=0 width=100%
+style='margin-left:4cm;width:23%;background:rgb(51, 102, 255)'>
+<td align=left style='padding:0cm 5.4pt 0cm 5.4pt'>
+<p class=MsoNormal style='margin-bottom:0cm;line-height:normal'><b><span style='font-size:10.0pt;color:white'>
+V2.2.0  /  30-November-2009</span></b></p></td></tr></table>
+<p class=MsoNormal style='line-height:normal'><span style='font-size:10.0pt'>&nbsp;</span></p>
+<p class=MsoNormal style='margin-left:4cm;line-height:normal'><b><u><span style='font-size:10.0pt'>
+Main Changes
+</span></u></b></p>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:10.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#8226;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+New folders and workspace architecture. 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:10.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#8226;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+Support of Raisonance C compiler: 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:20.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#186;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ Full compiler version required for inline assembly support. 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:20.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#186;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ Tested with v2.26.09.0317. 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:10.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#8226;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ECS limitation corrected: 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:20.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#186;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ References were frozen for 2 seconds whenever entering in post or pre states. 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:20.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#186;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ This was problematic in noisy environment. 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:10.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#8226;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+STM8L15x Charge Transfer acquisition optimized (30% faster). 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:10.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#8226;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+New parameters for STM8L15x introduced in “stm8_tsl_conf_CT.h” file for capacitance charging/discharging tuning: 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:20.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#186;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ CLWHTA (Capacitance Loading Waiting HIGH Time Adjustment). 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:20.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#186;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+ CLWLTA (Capacitance Loading Waiting HIGH Time Adjustment). 
+</span></p>
+<p class=MsoNormal style='line-height:normal'><span style='font-size:10.0pt'>&nbsp;&nbsp;</span></p>
+<table class=MsoNormal border=0 cellspacing=0 cellpadding=0 width=100%
+style='margin-left:4cm;width:23%;background:rgb(51, 102, 255)'>
+<td align=left style='padding:0cm 5.4pt 0cm 5.4pt'>
+<p class=MsoNormal style='margin-bottom:0cm;line-height:normal'><b><span style='font-size:10.0pt;color:white'>
+V2.1.0  /  30-September-2009</span></b></p></td></tr></table>
+<p class=MsoNormal style='line-height:normal'><span style='font-size:10.0pt'>&nbsp;</span></p>
+<p class=MsoNormal style='margin-left:4cm;line-height:normal'><b><u><span style='font-size:10.0pt'>
+Main Changes
+</span></u></b></p>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:10.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#8226;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+Source files clean-up, MISRA check. 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:10.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#8226;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+Update to latest STM8L standard peripheral libraries (STM8L10x v1.1.0 and STM8L15x v1.0.0). 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:10.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#8226;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+Examples improvement, new Wheel example with the STM8L15x added. 
+</span></p>
+<p class=MsoNormal style='line-height:normal'><span style='font-size:10.0pt'>&nbsp;&nbsp;</span></p>
+<table class=MsoNormal border=0 cellspacing=0 cellpadding=0 width=100%
+style='margin-left:4cm;width:23%;background:rgb(51, 102, 255)'>
+<td align=left style='padding:0cm 5.4pt 0cm 5.4pt'>
+<p class=MsoNormal style='margin-bottom:0cm;line-height:normal'><b><span style='font-size:10.0pt;color:white'>
+V2.0.0  /  31-August-2009</span></b></p></td></tr></table>
+<p class=MsoNormal style='line-height:normal'><span style='font-size:10.0pt'>&nbsp;</span></p>
+<p class=MsoNormal style='margin-left:4cm;line-height:normal'><b><u><span style='font-size:10.0pt'>
+Main Changes
+</span></u></b></p>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:10.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#8226;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+Package structure and files organization updated. 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:10.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#8226;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+Update to latest standard peripheral libraries. 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:10.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#8226;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+Add the support of the charge-transfer acquisition principle (only supported by STM8L10x and STM8L15x devices). 
+</span></p>
+<p class=MsoNormal style='line-height:normal'><span style='font-size:10.0pt'>&nbsp;&nbsp;</span></p>
+<table class=MsoNormal border=0 cellspacing=0 cellpadding=0 width=100%
+style='margin-left:4cm;width:23%;background:rgb(51, 102, 255)'>
+<td align=left style='padding:0cm 5.4pt 0cm 5.4pt'>
+<p class=MsoNormal style='margin-bottom:0cm;line-height:normal'><b><span style='font-size:10.0pt;color:white'>
+V1.3.0  /  29-October-2009</span></b></p></td></tr></table>
+<p class=MsoNormal style='line-height:normal'><span style='font-size:10.0pt'>&nbsp;</span></p>
+<p class=MsoNormal style='margin-left:4cm;line-height:normal'><b><u><span style='font-size:10.0pt'>
+Main Changes
+</span></u></b></p>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:10.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#8226;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+Update to latest STM8S Standard Library V1.1.1. 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:10.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#8226;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+Update acquisition and timebase timers table of STM8_TSL_RC_Configuration.h file. 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:10.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#8226;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+Change condition to disable ECS when a SCKey or a MCKey is touched. 
+</span></p>
+<p class=MsoNormal style='line-height:normal'><span style='font-size:10.0pt'>&nbsp;&nbsp;</span></p>
+<table class=MsoNormal border=0 cellspacing=0 cellpadding=0 width=100%
+style='margin-left:4cm;width:23%;background:rgb(51, 102, 255)'>
+<td align=left style='padding:0cm 5.4pt 0cm 5.4pt'>
+<p class=MsoNormal style='margin-bottom:0cm;line-height:normal'><b><span style='font-size:10.0pt;color:white'>
+V1.2.0  /  24-March-2009</span></b></p></td></tr></table>
+<p class=MsoNormal style='line-height:normal'><span style='font-size:10.0pt'>&nbsp;</span></p>
+<p class=MsoNormal style='margin-left:4cm;line-height:normal'><b><u><span style='font-size:10.0pt'>
+Main Changes
+</span></u></b></p>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:10.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#8226;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+Add an option in the configuration file to choose the acquisition timer. This option allows to use the library with any STM8 device. 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:10.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#8226;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+Add a synchronization capability (beta) on an interruption. This option is new and has not been fully validated. 
+</span>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:10.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#8226;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+Add Spread spectrum capability (beta). This option allows adding a variable delay between acquisitions to reduce noise sensitivity at specific frequencies. This option is new and has not been fully validated. 
+</span></p>
+<p class=MsoNormal style='line-height:normal'><span style='font-size:10.0pt'>&nbsp;&nbsp;</span></p>
+<table class=MsoNormal border=0 cellspacing=0 cellpadding=0 width=100%
+style='margin-left:4cm;width:23%;background:rgb(51, 102, 255)'>
+<td align=left style='padding:0cm 5.4pt 0cm 5.4pt'>
+<p class=MsoNormal style='margin-bottom:0cm;line-height:normal'><b><span style='font-size:10.0pt;color:white'>
+V1.1.0  /  21-February-2009</span></b></p></td></tr></table>
+<p class=MsoNormal style='line-height:normal'><span style='font-size:10.0pt'>&nbsp;</span></p>
+<p class=MsoNormal style='margin-left:4cm;line-height:normal'><b><u><span style='font-size:10.0pt'>
+Main Changes
+</span></u></b></p>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:10.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#8226;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+New option (NEGDETECT_AUTOCAL) added in the configuration file to enable or disable the autocalibration. 
+</span></p>
+<p class=MsoNormal style='line-height:normal'><span style='font-size:10.0pt'>&nbsp;&nbsp;</span></p>
+<table class=MsoNormal border=0 cellspacing=0 cellpadding=0 width=100%
+style='margin-left:4cm;width:23%;background:rgb(51, 102, 255)'>
+<td align=left style='padding:0cm 5.4pt 0cm 5.4pt'>
+<p class=MsoNormal style='margin-bottom:0cm;line-height:normal'><b><span style='font-size:10.0pt;color:white'>
+V1.0.0  /  22-January-2009</span></b></p></td></tr></table>
+<p class=MsoNormal style='line-height:normal'><span style='font-size:10.0pt'>&nbsp;</span></p>
+<p class=MsoNormal style='margin-left:4cm;line-height:normal'><b><u><span style='font-size:10.0pt'>
+Main Changes
+</span></u></b></p>
+<p class=MsoListParagraph style='margin-left:4cm;margin-right:4cm;text-indent:10.0pt;line-height:normal'><spanstyle='font-size:10.0pt;font-family:Symbol'>&#8226;<span style='font:7.0pt'>&nbsp;</span><span style='font-size:10.0pt'>
+First official release. 
+</span></p>
+<p class=MsoNormal style='line-height:normal'><span style='font-size:10.0pt'>&nbsp;</span></p>
+<table class=MsoNormal border=0 cellspacing=0 cellpadding=0 width=100%
+style='margin-left:4cm;margin-right:4cm;width:80%;background:rgb(51, 102, 255)'>
+<td style='padding:0cm 5.4pt 0cm 5.4pt'>
+<p class=MsoNormal style='margin-left:0cm;margin-bottom:0cm;line-height:normal'><b><span style='font-size:12.0pt;color:white'>
+License</span></b></p></td></tr></table>
+<p class=MsoNormal style='line-height:normal'><span style='font-size:10.0pt'>&nbsp;</span></p>
+<p class=MsoNormal style='margin-left:4cm;margin-right:4cm;line-height:normal'><span style='font-size:10.0pt;color:black'>Licensed under MCD-ST Liberty SW License Agreement V2, (the "License").
+You may not use this file except in compliance with the License.
+You may obtain a copy of the License at:
+
+
+</span></p>
+<p class=MsoNormal style='text-align:center;line-height:normal'><span style='font-size:10.0pt'>
+<a href=http://www.st.com/software_license_agreement_liberty_v2> http://www.st.com/software_license_agreement_liberty_v2</a></span></p>
+<p class=MsoNormal style='margin-left:4cm;margin-right:4cm;line-height:normal'><span style='font-size:10.0pt;color:black'>Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+</a></span></p>
+<p class=MsoNormal style='line-height:normal'><b><span style='font-size:10.0pt'>&nbsp;&nbsp;&nbsp;&nbsp;</span></b></p>
+<table class=MsoNormal border=0 cellspacing=0 cellpadding=0 width=100%
+style='margin-left:4cm;margin-right:4cm;width:80%;background:rgb(51, 102, 255)'>
+<td style='padding:0cm 5.4pt 0cm 5.4pt'>
+<p class=MsoNormal style='margin-left:0cm;margin-bottom:0cm;line-height:4pt'><b><span style='font-size:10.0pt;color:rgb(51, 102, 255)'>
+---</span></b></p></td></tr></table>
+<p class=MsoNormal style='line-height:normal'><b><span style='font-size:10.0pt'>&nbsp;&nbsp;&nbsp;&nbsp;</span></b></p>
+<p class=MsoNormal style='text-align:center;line-height:normal'><span style='font-size:10.0pt'>
+For complete documentation on <b>STMTouch</b> microcontrollers please visit <a href=http://www.st.com/stmtouch> http://www.st.com/stmtouch</a></span></p>
+<p class=MsoNormal style='line-height:normal'><b><span style='font-size:10.0pt'>&nbsp;&nbsp;&nbsp;</span></b></p>
+<p class=MsoNormal align=right style='margin-right:1cm;line-height:normal'><span style='font-size:8.0pt'>Generated by RNcreator v2.3
+</span></p>
+<!-- Generated by RNcreator v2.3 on 14/10/2013  -->
+</div>
+</body>
+</html>
