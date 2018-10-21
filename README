@@ -1,3 +1,4 @@
 Simple project based on STM8S903 MCU
 Device control  auto seat heater, it use SPL and touch Button  library.
 Manual and Auto mode
+Project PCB and Schematic https://easyeda.com/kitserg68/seatheater
